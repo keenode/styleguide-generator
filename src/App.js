@@ -1,12 +1,20 @@
 import React, { Component } from 'react'
-import './App.css'
+import { Route, Switch } from 'react-router-dom'
+// import { Route, Switch, withRouter } from 'react-router-dom'
+
+import Layout from './hoc/Layout/Layout'
+import Home from './containers/Home/Home'
+import StyleGuide from './containers/StyleGuide/StyleGuide'
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1 className="App-title">Welcome to React</h1>
-      </div>
+      <Layout>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/styleguide" exact component={StyleGuide} />
+        </Switch>
+      </Layout>
     )
   }
 }
